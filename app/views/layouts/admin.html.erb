@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Wise Guy Test</title>
+      <link rel="shortcut icon" href="/wise-guy-logo.png" type="image/png">
+      <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+   </head>
+   <body class="nav-md">
+      <div class="container body">
+         <div class="main_container">
+            <%= render "shared/left_col"%>
+            <%= render "shared/top_navigation"%>
+            <%= yield %>
+            <%= render "shared/footer"%>  
+         </div>
+      </div>
+   </body>
+</html>

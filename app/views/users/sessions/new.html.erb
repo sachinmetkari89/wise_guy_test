@@ -1,0 +1,27 @@
+<div>
+  <div class="login_wrapper">
+  <div class="animate form login_form">
+   <section class="login_content">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h1>Login Form</h1>
+      <div>
+         <%= f.email_field :email, autofocus: true, :placeholder => "Username", :class => "form-control" %>
+      </div>
+      <div>
+         <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+      </div>
+      <div>
+         <%= f.submit "Log in", :class => "btn btn-default submit" %>
+      </div>
+      <div class="clearfix"></div>
+      <div class="separator">
+         <div>
+            <h1><i class="fa fa-paw"></i>Welcome To <br/>wise guy consultants pvt. ltd</h1>
+            <p>©2017 All Rights Reserved.<br/>wise guy consultants pvt. ltd. Privacy and Terms</p>
+         </div>
+      </div>
+      <% end %>
+   </section>
+  </div> 
+ </div>
+</div>

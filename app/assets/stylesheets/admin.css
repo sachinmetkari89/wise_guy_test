@@ -1,0 +1,21 @@
+/*
+ *= require_tree .
+ *= require_self
+
+ *= require css/bootstrap.min.css
+ *= require css/font-awesome.min.css
+ *= require css/nprogress.css
+ *= require css/green.css
+ *= require css/dataTables.bootstrap.min.css
+ *= require css/buttons.bootstrap.min.css
+ *= require css/fixedHeader.bootstrap.min.css
+ *= require css/responsive.bootstrap.min.css
+ *= require css/scroller.bootstrap.min.css
+ *= require css/prettify.min.css
+ *= require css/select2.min.css
+ *= require css/switchery.min.css
+ *= require css/starrr.css
+ *= require css/daterangepicker.css
+ *= require css/custom.min.css
+
+ */

@@ -1,0 +1,42 @@
+<div class="top_nav">
+   <div class="nav_menu">
+      <nav class="navbar navbar-defaul" role="navigation">
+         <div class = "navbar-header">
+            <a class = "navbar-brand" href = "https://www.wiseguyreports.com">Wise Guy Test</a>
+         </div>
+         <div>
+            <ul class = "nav navbar-nav">
+               <li class = "active"><a href = "<%= products_path %>">Products</a></li>
+               <li class = "dropdown">
+                  <a href = "<%= categories_path %>" class = "dropdown-toggle" data-toggle = "dropdown">
+                  Categories
+                  <b class = "caret"></b>
+                  </a>
+                  <ul class = "dropdown-menu">
+                     <% @categories.each do |category| %>
+                      <li><a href = "<%= category_path(category) %>"><%= category.name rescue nil%></a></li>
+                     <%end%> 
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul class="nav navbar-nav navbar-right">
+            <li class="">
+               <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+               <img src="/images/admin.png" alt=""><%= current_user.email rescue nil%>
+               <span class=" fa fa-angle-down"></span>
+               </a>
+               <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><% if user_signed_in? %>
+                     <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "fa fa-sign-out pull-right" %>
+                     <%else%>
+                     <%= link_to 'Log In', new_user_session_path, :class => "fa fa-sign-in pull-right" %>
+                     <%end%>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+   </div>
+</div>
