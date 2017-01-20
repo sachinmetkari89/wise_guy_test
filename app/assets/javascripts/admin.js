@@ -1,20 +1,22 @@
-//= require jquery
+// require jquery
+
+//= require js/jquery.min.js
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-//= require js/jquery.min.js
+
 //= require js/bootstrap.min.js
-//= require js/fastclick.js
-//= require js/nprogress.js
-//= require js/bootstrap-progressbar.min.js
+// require js/fastclick.js
+// require js/nprogress.js
+// require js/bootstrap-progressbar.min.js
 //= require js/jquery.dataTables.min.js
 //= require js/dataTables.bootstrap.min.js
 //= require js/dataTables.buttons.min.js
 //= require js/buttons.bootstrap.min.js
-//= require js/buttons.flash.min.js
+// require js/buttons.flash.min.js
 //= require js/buttons.html5.min.js
-//= require js/buttons.print.min.js
+// require js/buttons.print.min.js
 //= require js/dataTables.fixedHeader.min.js
 //= require js/dataTables.keyTable.min.js
 //= require js/dataTables.responsive.min.js
@@ -22,17 +24,17 @@
 //= require js/dataTables.scroller.min.js
 //= require js/icheck.min.js
 //= require js/moment.min.js
-//= require js/daterangepicker.js
-//= require js/bootstrap-wysiwyg.min.js
-//= require js/jquery.hotkeys.js
+// require js/daterangepicker.js
+// require js/bootstrap-wysiwyg.min.js
+// require js/jquery.hotkeys.js
 //= require js/prettify.js
-//= require js/jquery.tagsinput.js
-//= require js/switchery.min.js
-//= require js/select2.full.min.js
-//= require js/parsley.min.js
-//= require js/autosize.min.js
-//= require js/jquery.autocomplete.min.js
-//= require js/starrr.js
+// require js/jquery.tagsinput.js
+// require js/switchery.min.js
+// require js/select2.full.min.js
+// require js/parsley.min.js
+// require js/autosize.min.js
+// require js/jquery.autocomplete.min.js
+// require js/starrr.js
 // require js/custom.min.js
 //= require js/custom.js
 //= require js/my_custom.js
