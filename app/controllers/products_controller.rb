@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   
   before_action :authenticate_user!
+  before_action :is_admin?
   layout 'admin'
   
 
@@ -46,7 +47,11 @@ class ProductsController < ApplicationController
 
   private
 	def product_params
-		params.require(:product).permit(:name, :price, :category_id)
+		params.require(:product).permit(:name, :price, :category_id, :description, :product_image)
 	end
+    
+  def is_admin?
+    redirect_to root_path unless current_user.is_admin?   
+  end
 
 end

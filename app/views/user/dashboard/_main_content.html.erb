@@ -1,0 +1,41 @@
+<style type="text/css">
+    .overflow-text{
+        white-space: nowrap; 
+        width: 16em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<div class="container">
+  <div>
+   <%= form_tag  user_dashboard_index_path, method: :get do %> 
+      <div>
+          <%= text_field_tag :query, params[:query] %>
+          <%= submit_tag "Search", name: nil %>
+      </div>  
+   <%end%>
+</div><br/><br/>
+
+    <div class="row text-center">
+
+      <% @products.each do |product| %> 
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="<%= product.product_image.url %>" style="height: 200px;width: 238px;" alt="">
+                <div class="caption">
+                    <h4><%= product.name rescue nil%></h4>
+                    <!-- <p style="overflow: hidden;"><%#= product.description rescue nil%></p> -->
+                    <div class="overflow-text"><%= product.description rescue nil%></div>
+                    <p> 
+                       <a href="#" class="btn btn-default disabled"><%= product.price %></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+      <%end%>
+
+    </div>
+    <%= will_paginate @products %>
+</div>
+

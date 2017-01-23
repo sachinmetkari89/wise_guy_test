@@ -1,4 +1,4 @@
-<h2>Forgot your password?</h2>
+<!-- <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -14,3 +14,29 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+ -->
+<div class="login_wrapper">
+<div class="animate form login_form">
+   <section class="login_content">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <h1></h1>
+      <div>
+         <%= f.email_field :email, autofocus: true, :class =>"form-control", :placeholder =>"Email" %>
+      </div>
+      <div>
+         <%= f.submit "Send me reset password instructions", :class =>"btn btn-default" %>
+      </div>
+     <% end %> 
+      <%= render "users/shared/links" %>
+      <div class="clearfix"></div>
+      <div class="separator">
+         <div class="clearfix"></div>
+         <br/>
+         <div>
+            <h1><i class="fa fa-paw"></i>Wise Guy Test!</h1>
+            <p>©2016 All Rights Reserved. Wise Guy Test. Privacy and Terms</p>
+         </div>
+      </div>
+   </section>
+</div>

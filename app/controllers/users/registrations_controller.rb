@@ -1,16 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
 layout 'login'
-
-def new
-   redirect_to new_user_session_path 
-end
- 
-def edit
-  redirect_to new_user_session_path   
-end 
-
-
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 

@@ -1,0 +1,88 @@
+<div class="right_col" role="main">
+   <div class="">
+      
+      <div class="page-title">
+         <div class="title_left" style="padding-bottom: 10px;">
+            <h3><a href="<%= admin_users_path %>">Users</a></h3>
+         </div>
+      </div>
+
+      <div class="clearfix"></div>
+      
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+               
+               <div class="x_title">
+                  <h2><%= action_name.capitalize %> User</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                     </li>
+                     <li><a class="close-link"><i class="fa fa-close"></i></a>
+                     </li>
+                  </ul>
+                  <div class="clearfix"></div>
+               </div>
+
+               <div class="x_content">
+                  <br/>
+                  <%= form_for @user, :html => {:class => "form-horizontal form-label-left"}, :url => @url do |user| %>
+                     
+                     <div class="form-group">
+                        <%= user.label :first_name, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= user.text_field :first_name, :class => "form-control col-md-7 col-xs-12" %>
+                        </div>
+                     </div>
+                     
+                     <div class="form-group">
+                        <%= user.label :last_name, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= user.text_field :last_name, :class => "form-control col-md-7 col-xs-12" %>
+                        </div>
+                     </div>
+                     
+                     <div class="form-group">
+                        <%= user.label :email, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= user.text_field :email, :class => "form-control col-md-7 col-xs-12" %>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <%= user.label :is_admin, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= select_tag "user[is_admin]", options_for_select([["Yes", true], ["No", false]], @user.is_admin?), :class => "form-control", :required => true %>
+                        </div>
+                     </div>
+                    
+                    <%unless action_name == "edit" %> 
+                     <div class="form-group">
+                        <%= user.label :password, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= user.password_field :password, :class => "form-control col-md-7 col-xs-12" %>
+                        </div>
+                     </div>
+                     
+                     <div class="form-group">
+                        <%= user.label :password_confirmation, :class => "control-label col-md-3 col-sm-3 col-xs-12" %>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                           <%= user.password_field :password_confirmation, :class => "form-control col-md-7 col-xs-12" %>
+                        </div>
+                     </div>
+                    <%end%>
+
+                     <div class="ln_solid"></div>
+                     <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                           <%= link_to "Cancel", admin_users_path, :class => "btn btn-primary" %>
+                           <%= user.submit "Submit", :class => "btn btn-success" %>
+                        </div>
+                     </div>
+                  <%end%>
+               </div>
+
+            </div>
+         </div>
+      </div>
+    </div>
+</div>

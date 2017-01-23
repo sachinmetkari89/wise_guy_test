@@ -1,12 +1,32 @@
 Rails.application.routes.draw do
-  
-  root :to => 'welcome#index'
 
-  devise_for :users , controllers: { sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords"}
+  # namespace :user do
+  #  resources :catagories
+  #  resources :products
+  # end
   
+  root :to => "welcome#index"
+  # get "welcome/confirm_email/:token", :to => "welcome#confirm_email"
+  resources :welcome do 
+     get :confirm_email, :on => :collection
+  end
+
+  namespace :admin do
+    resources :users do 
+     get :change_password
+     patch :update_password
+    end
+  end
+  
+  namespace :user do
+    resources :dashboard
+  end
+    
+  devise_for :users , controllers: { sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords"}  
   resources :categories
-
   resources :products
+  
+  # resources :users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
